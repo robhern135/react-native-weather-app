@@ -17,7 +17,7 @@ import WeatherDetails from './components/WeatherDetails';
 import {colors} from './utils';
 
 
-const WEATHER_API_KEY = "123ffd85dddf85ffc366a4325f4aa34b"
+// const WEATHER_API_KEY = "xx"
 const BASE_WEATHER_URL = "https://api.openweathermap.org/data/2.5/weather?"
 
 export default function App() {
@@ -48,7 +48,7 @@ const [unitsSystem, setUnitsSystem] = useState('metric');
 
 
       const weatherUrl =
-      `${BASE_WEATHER_URL}lat=${latitude}&lon=${longitude}&units=${unitsSystem}&appid=${WEATHER_API_KEY}`;
+      `${BASE_WEATHER_URL}lat=${latitude}&lon=${longitude}&units=${unitsSystem}&appid=${PROCESS.env.EXPO_API_KEY}`;
       // const weatherUrl= "https://api.openweathermap.org/data/2.5/weather?lat=51.449720&lon=-0.003070&units=metric&appid=123ffd85dddf85ffc366a4325f4aa34b"
 
       const response = await fetch(weatherUrl)
